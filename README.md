@@ -2,6 +2,10 @@
 
 Interactive Streamlit app for inference with supplied deep-learning models.
 
+## Live demo
+
+Try the deployed app: [Deep Learning Playground](https://deep-learning-playground-h6vw2q5ztqcjpulmnuemsq.streamlit.app/)
+
 ## Features
 
 - **Cat vs Dog CNN:** upload an image for binary classification and confidence.
