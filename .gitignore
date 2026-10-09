@@ -1,4 +1,10 @@
 __pycache__/
 .venv/
+venv/
+.env
+.env.*
+!.env.example
 .streamlit/secrets.toml
 *.pyc
+*.log
+project-backup-before-github-replacement/

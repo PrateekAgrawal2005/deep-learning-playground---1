@@ -9,6 +9,8 @@ Try the deployed app: [Deep Learning Playground](https://deep-learning-playgroun
 ## Features
 
 - **LSTM Sentence Generator:** continue a seed phrase by a selected number of new words.
+- **Autoencoder Recommendation System:** generate movie recommendations.
+- **Cat vs Dog Classifier:** binary image classification using ResNet18.
 - Sidebar navigation, cached model loading, validation, and friendly errors.
 - Inference only: no model or tokenizer training is performed.
 
@@ -25,9 +27,10 @@ streamlit run app.py
 
 | Feature | Artifact | Input |
 |---|---|---|
-| Sentence generator (option 1) | `models/best_lstm_model_30.keras` | 30-token pre-padded text sequence |
-| Sentence generator (option 2) | `models/best_lstm_model.keras` | 745-token pre-padded text sequence |
+| Sentence generator | `models/best_lstm_model.keras` | 745-token pre-padded text sequence |
 | Tokenizer | `models/tokinizer.pkl` | 8,978-word vocabulary |
+| Movie Recommendation | `movie-recommender/sae_model.pth` | 1682-dim rating vector |
+| Cat vs Dog Classifier | `models/best_resnet18.pth` | 224x224 RGB Image |
 
 ## Before posting or deployment
 
@@ -36,4 +39,6 @@ streamlit run app.py
 
 ## Deployment
 
-Ready for Streamlit Community Cloud or similar Python hosting: push the repository to GitHub, ensure `models/` is included, and use `app.py` as the entry point. TensorFlow hosting needs sufficient memory.
+The app is built with Streamlit and starts from `app.py`. The root `requirements.txt` contains the runtime dependencies for all three modules.
+
+For deployment, use a Python host that supports TensorFlow, PyTorch, and torchvision and has enough RAM for both frameworks and the supplied model files. Streamlit Community Cloud may not have enough memory for this combination. Configure the host to run `streamlit run app.py`.
